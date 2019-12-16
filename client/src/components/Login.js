@@ -34,34 +34,40 @@ const Login = props => {
   }
 
   return (
-    <>
+    <div className="login-page">
       <h1>Welcome to the Bubble App!</h1>
 
       {localStorage.getItem("token") ? (
         <>
-        <Link to="/bubbles">See Bubbles Yo</Link>
-        <button onClick={logOut}>Logout</button>
+          <Link to="/bubbles">See Bubbles Yo</Link>
+          <button className="button logout" onClick={logOut}>
+            Logout
+          </button>
         </>
       ) : (
         <>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            value={credentials.username}
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChange}
-          />
-          <button>Login</button>
-        </form>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              value={credentials.username}
+              onChange={handleChange}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              value={credentials.password}
+              onChange={handleChange}
+            />
+            <button className="button login">Login</button>
+          </form>
         </>
       )}
-    </>
+    </div>
   );
 };
 
