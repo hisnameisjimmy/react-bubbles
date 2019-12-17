@@ -10,6 +10,13 @@ body,
   padding: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -18,6 +25,46 @@ body,
   svg {
     height: 100%;
   }
+}
+
+.login-page {
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.login-page h1 {
+  text-align: center;
+}
+
+.login-page form {
+  width: 500px;
+}
+
+.login-page input {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.button {
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  display: block;
+  margin: 20px auto 0;
+  cursor: pointer;
+}
+
+.login-page .login {
+  background: rgb(57, 105, 238);
+}
+
+.login-page .logout {
+  background: rgb(109, 109, 109);
 }
 
 .spacer {
